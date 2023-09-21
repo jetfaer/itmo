@@ -1,0 +1,152 @@
+x, y = 10, 13
+h, m, c = 1, 37, 58
+
+#решение задания 1
+time = (h*60*60+m*60+c)
+import math
+total_parts = (math.floor(time/x + time/y))
+print(total_parts)
+
+#решение задания 2
+estimate_first = time%x
+estimate_second = time%y
+print(estimate_first, estimate_second)
+
+#решение задания 3
+a = time//x
+b = time//y
+
+if a > b:
+    time1 = (a - b) * y
+    delta_h = time1//3600
+    delta_m = (time1-delta_h*3600)//60
+    delta_s = (time1-delta_h*3600-delta_m*60)
+    print(delta_h, delta_m, delta_s)
+else:
+    time1 = (b - a) * x
+    delta_h = time1 // 3600
+    delta_m = (time1 - delta_h * 3600) // 60
+    delta_s = (time1 - delta_h * 3600 - delta_m * 60)
+    print(delta_h, delta_m, delta_s)
+
+
+#решение задания 4
+
+time2 = abs(a-b)*y
+time3 = abs(a-b)*x
+q = max(time2, time3)
+delta_h = q // 3600
+delta_m = (q - delta_h * 3600) // 60
+delta_s = (q - delta_h * 3600 - delta_m * 60)
+print(delta_h, delta_m, delta_s)
+
+#решение 5 задания
+#x, y = map (int, input('Write two numbers').split( ))
+#h, m, c = map(int, input('Write three numbers').split(":"))
+
+#решение 6 задания
+n = 924499
+is_prime = True
+i = 2
+while (i*i<=n):
+    if n % i == 0:
+        is_prime = False
+        break
+    i+=1
+if is_prime:
+    print(f'{n} is a prime number!')
+else:
+    print(f'{n} is not a prime number :(')
+
+#решение 7 задания
+n = 1000000007
+is_prime = True
+i = 2
+while (i*i<=n):
+    if n % i == 0:
+        is_prime = False
+        break
+    i+=1
+if is_prime:
+    print(f'{n} is a prime number!')
+else:
+    print(f'{n} is not a prime number :(')
+
+#решение 8 задания
+n = 123456789
+steps = 0
+while (n!=1):
+    if n % 2 == 0:
+        n //= 2
+    else:
+        n = n * 3 + 1
+    steps+=1
+print(f'The number of steps is {steps}')
+
+#решение 9 задания
+n = 1000000
+is_prime = [True for i in range(n + 1)]
+prime2=[]
+i=2
+while i<n:
+    if is_prime[i]:
+        q=2
+        while q*i<=n :
+            is_prime[q*i] = False
+            q+=1
+        prime2.append(i)
+    i+=1
+
+i=2
+while i<n:
+    if is_prime[i]:
+        print(i, end=' ')
+    i+=1
+
+#решение 10 задания
+n = 1000000
+primes=[]
+i=2
+is_prime = [True for i in range(n + 1)]
+while i<n:
+    if is_prime[i]:
+        q=2
+        while q*i<=n :
+            is_prime[q*i] = False
+            q+=1
+        primes.append(i)
+    i+=1
+    primes.sort()
+print(primes)
+
+#решение 11 задания
+print(primes[0:10])
+print(primes[13:52])
+print(primes[-1:-11:-1])
+for i in range(10):
+    print(i, end='')
+for i in range(10):
+    print(i, end='')
+for i in range(10):
+    print(i, end='')
+def print_range_10():
+    for i in range(10):
+        print(i, end='')
+print_range_10()
+print_range_10()
+print_range_10()
+
+#решение 12 задания
+def print_range_10():
+    for i in range(10):
+        print(i, end='')
+
+print_range_10()
+print_range_10()
+print_range_10()
+
+#решение 13 задания
+
+
+
+
